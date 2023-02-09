@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@0.17.0/build/qrcode.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="url-input" placeholder="Enter URL">
+      <button type="button" id="generate-button">Generate QR Code</button>
+    </form>
+    <div id="qr-code"></div>
+    <script>
+      document.getElementById("generate-button").addEventListener("click", function() {
+        const url = document.getElementById("url-input").value;
+        new QRCode(document.getElementById("qr-code"), {
+          text: url,
+          width: 128,
+          height: 128
+        });
+      });
+    </script>
+  </body>
+</html>
